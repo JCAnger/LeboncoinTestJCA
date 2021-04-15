@@ -8,13 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		49EE938F26280EF6002812A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE938E26280EF6002812A7 /* AppDelegate.swift */; };
-		49EE939126280EF6002812A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE939026280EF6002812A7 /* SceneDelegate.swift */; };
-		49EE939326280EF6002812A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE939226280EF6002812A7 /* ViewController.swift */; };
 		49EE939626280EF6002812A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EE939426280EF6002812A7 /* Main.storyboard */; };
 		49EE939826280EFC002812A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49EE939726280EFC002812A7 /* Assets.xcassets */; };
 		49EE939B26280EFC002812A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EE939926280EFC002812A7 /* LaunchScreen.storyboard */; };
 		49EE93A626280EFC002812A7 /* LeboncoinTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE93A526280EFC002812A7 /* LeboncoinTestTests.swift */; };
 		49EE93B126280EFC002812A7 /* LeboncoinTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE93B026280EFC002812A7 /* LeboncoinTestUITests.swift */; };
+		49F11A0D26282889008DD650 /* LBCAdListViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F11A0C26282889008DD650 /* LBCAdListViewcontroller.swift */; };
+		49F11A0E26282889008DD650 /* LBCAdListViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F11A0C26282889008DD650 /* LBCAdListViewcontroller.swift */; };
+		49F11A0F26282889008DD650 /* LBCAdListViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F11A0C26282889008DD650 /* LBCAdListViewcontroller.swift */; };
+		49F11A1426282930008DD650 /* LBCAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F11A1326282930008DD650 /* LBCAd.swift */; };
+		49F11A1526282930008DD650 /* LBCAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F11A1326282930008DD650 /* LBCAd.swift */; };
+		49F11A1626282930008DD650 /* LBCAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F11A1326282930008DD650 /* LBCAd.swift */; };
+		49F11A1E26282AC9008DD650 /* LBCHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F11A1D26282AC9008DD650 /* LBCHttpManager.swift */; };
+		49F11A1F26282AC9008DD650 /* LBCHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F11A1D26282AC9008DD650 /* LBCHttpManager.swift */; };
+		49F11A2026282AC9008DD650 /* LBCHttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F11A1D26282AC9008DD650 /* LBCHttpManager.swift */; };
+		49F11A2526282B59008DD650 /* LBCAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F11A2426282B59008DD650 /* LBCAdTableViewCell.swift */; };
+		49F11A2626282B59008DD650 /* LBCAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F11A2426282B59008DD650 /* LBCAdTableViewCell.swift */; };
+		49F11A2726282B59008DD650 /* LBCAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F11A2426282B59008DD650 /* LBCAdTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +47,6 @@
 /* Begin PBXFileReference section */
 		49EE938B26280EF6002812A7 /* LeboncoinTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeboncoinTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49EE938E26280EF6002812A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		49EE939026280EF6002812A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		49EE939226280EF6002812A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		49EE939526280EF6002812A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49EE939726280EFC002812A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49EE939A26280EFC002812A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +57,10 @@
 		49EE93AC26280EFC002812A7 /* LeboncoinTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeboncoinTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49EE93B026280EFC002812A7 /* LeboncoinTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeboncoinTestUITests.swift; sourceTree = "<group>"; };
 		49EE93B226280EFC002812A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49F11A0C26282889008DD650 /* LBCAdListViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBCAdListViewcontroller.swift; sourceTree = "<group>"; };
+		49F11A1326282930008DD650 /* LBCAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBCAd.swift; sourceTree = "<group>"; };
+		49F11A1D26282AC9008DD650 /* LBCHttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBCHttpManager.swift; sourceTree = "<group>"; };
+		49F11A2426282B59008DD650 /* LBCAdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBCAdTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +112,10 @@
 			isa = PBXGroup;
 			children = (
 				49EE938E26280EF6002812A7 /* AppDelegate.swift */,
-				49EE939026280EF6002812A7 /* SceneDelegate.swift */,
-				49EE939226280EF6002812A7 /* ViewController.swift */,
+				49F11A1326282930008DD650 /* LBCAd.swift */,
+				49F11A0C26282889008DD650 /* LBCAdListViewcontroller.swift */,
+				49F11A2426282B59008DD650 /* LBCAdTableViewCell.swift */,
+				49F11A1D26282AC9008DD650 /* LBCHttpManager.swift */,
 				49EE939426280EF6002812A7 /* Main.storyboard */,
 				49EE939726280EFC002812A7 /* Assets.xcassets */,
 				49EE939926280EFC002812A7 /* LaunchScreen.storyboard */,
@@ -258,9 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49EE939326280EF6002812A7 /* ViewController.swift in Sources */,
+				49F11A1426282930008DD650 /* LBCAd.swift in Sources */,
 				49EE938F26280EF6002812A7 /* AppDelegate.swift in Sources */,
-				49EE939126280EF6002812A7 /* SceneDelegate.swift in Sources */,
+				49F11A0D26282889008DD650 /* LBCAdListViewcontroller.swift in Sources */,
+				49F11A2526282B59008DD650 /* LBCAdTableViewCell.swift in Sources */,
+				49F11A1E26282AC9008DD650 /* LBCHttpManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +284,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49F11A1526282930008DD650 /* LBCAd.swift in Sources */,
 				49EE93A626280EFC002812A7 /* LeboncoinTestTests.swift in Sources */,
+				49F11A0E26282889008DD650 /* LBCAdListViewcontroller.swift in Sources */,
+				49F11A2626282B59008DD650 /* LBCAdTableViewCell.swift in Sources */,
+				49F11A1F26282AC9008DD650 /* LBCHttpManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +296,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49F11A1626282930008DD650 /* LBCAd.swift in Sources */,
 				49EE93B126280EFC002812A7 /* LeboncoinTestUITests.swift in Sources */,
+				49F11A0F26282889008DD650 /* LBCAdListViewcontroller.swift in Sources */,
+				49F11A2726282B59008DD650 /* LBCAdTableViewCell.swift in Sources */,
+				49F11A2026282AC9008DD650 /* LBCHttpManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +390,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -421,7 +445,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
