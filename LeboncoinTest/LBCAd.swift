@@ -41,7 +41,6 @@ class SmallAd {
     var urgent: Bool
     var siret: String
     
-
     init(smallAd: [String:Any]) {
         self.id = smallAd["id"] as! Int
         self.numCat = smallAd["category_id"] as! Int

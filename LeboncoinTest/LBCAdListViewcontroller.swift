@@ -46,26 +46,16 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
         
         self.getCategories()
         
-        
     }
     
     func getDataFromUrl() {
         manager.getClassifedIdFromLbc { (json) in
-            self.convertToClassifiedArray(results: json)
+            self.convertToSmallAdsArray(results: json)
             self.updateData()
         }
     }
     
     func getCategories() {
-//        manager.getCategories { (json, error) in
-//            if json != nil {
-//                self.convertToCategoriesArray(results: json!)
-//                self.getDataFromUrl()
-//            }
-//            else {
-//                print("error")
-//            }
-//        }
 
         manager.getCategoriesWithSuccess(success: { (json : [[String : Any]]) in
             print("success")
@@ -74,22 +64,18 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
         }) { (error : NSError) in
             print("error")
         }
-        
-     
     }
     
     
-    func convertToClassifiedArray(results: [[String:Any]]) {
+    func convertToSmallAdsArray(results: [[String:Any]]) {
         SmallAds = []
         if results.count > 0 {
             for object: [String: Any] in results {
-                //let catOrder = categories.sorted (by: {$0.num < $1.num})
                 let classified = SmallAd.init(smallAd: object)
                 classified.cat = categories[classified.numCat - 1].category
                 allSmallAds.append(classified)
             }
             SmallAds = allSmallAds
-        
         }
     }
     
@@ -109,7 +95,6 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
     
     func updateData() {
         filterResponseByCategoriesAndDate()
-        filterUrgentFirst()
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -118,20 +103,13 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
     
     
     func filterResponseByCategoriesAndDate() {
-        let sorted = allSmallAds.sorted(by: {$0.date.timeIntervalSince1970 < $1.date.timeIntervalSince1970})
-        if selectedCat > 0 {
-            //self.title = Category.init(cat: selectedCat).cat
-            //self.title = categories.sort{$0 == selectedCat; $1}
-            let sortedByCategory = sorted.filter {
-                $0.numCat == selectedCat
-            }
-            SmallAds = sortedByCategory
-        }
-        else {
-            SmallAds = sorted;
-            DispatchQueue.main.async {
-                self.title = "leboncoin"
-            }
+        let sorted = allSmallAds.sorted(by: {
+                $0.date.compare($1.date) == .orderedDescending
+            })
+ 
+        SmallAds = sorted;
+        DispatchQueue.main.async {
+            self.title = "leboncoin"
         }
     }
     

@@ -127,12 +127,12 @@ class LBCAdTableViewCell: UITableViewCell {
         category.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10 as CGFloat).isActive = true
 
         price.translatesAutoresizingMaskIntoConstraints = false
-        price.topAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -25 as CGFloat).isActive = true
+        price.topAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -27 as CGFloat).isActive = true
         price.leftAnchor.constraint(equalTo: picture.leftAnchor, constant: 100 as CGFloat).isActive = true
         price.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10 as CGFloat).isActive = true
 
         date.translatesAutoresizingMaskIntoConstraints = false
-        date.topAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -25 as CGFloat).isActive = true
+        date.topAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -27 as CGFloat).isActive = true
         date.leftAnchor.constraint(equalTo: picture.leftAnchor, constant: 100 as CGFloat).isActive = true
         date.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10 as CGFloat).isActive = true
         date.textAlignment = .right
