@@ -25,6 +25,9 @@
 		49F11A2526282B59008DD650 /* LBCAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F11A2426282B59008DD650 /* LBCAdTableViewCell.swift */; };
 		49F11A2626282B59008DD650 /* LBCAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F11A2426282B59008DD650 /* LBCAdTableViewCell.swift */; };
 		49F11A2726282B59008DD650 /* LBCAdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F11A2426282B59008DD650 /* LBCAdTableViewCell.swift */; };
+		49F11A442629D8A3008DD650 /* LBCDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F11A432629D8A3008DD650 /* LBCDetailViewController.swift */; };
+		49F11A482629D8A9008DD650 /* LBCDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F11A432629D8A3008DD650 /* LBCDetailViewController.swift */; };
+		49F11A4C2629D8A9008DD650 /* LBCDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F11A432629D8A3008DD650 /* LBCDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,7 @@
 		49F11A1326282930008DD650 /* LBCAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBCAd.swift; sourceTree = "<group>"; };
 		49F11A1D26282AC9008DD650 /* LBCHttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBCHttpManager.swift; sourceTree = "<group>"; };
 		49F11A2426282B59008DD650 /* LBCAdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBCAdTableViewCell.swift; sourceTree = "<group>"; };
+		49F11A432629D8A3008DD650 /* LBCDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBCDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 				49F11A2426282B59008DD650 /* LBCAdTableViewCell.swift */,
 				49EE93DC26298660002812A7 /* LBCManager.swift */,
 				49F11A1D26282AC9008DD650 /* LBCHttpManager.swift */,
+				49F11A432629D8A3008DD650 /* LBCDetailViewController.swift */,
 				49EE939726280EFC002812A7 /* Assets.xcassets */,
 				49EE939926280EFC002812A7 /* LaunchScreen.storyboard */,
 				49EE939C26280EFC002812A7 /* Info.plist */,
@@ -276,6 +281,7 @@
 				49F11A0D26282889008DD650 /* LBCAdListViewcontroller.swift in Sources */,
 				49F11A2526282B59008DD650 /* LBCAdTableViewCell.swift in Sources */,
 				49F11A1E26282AC9008DD650 /* LBCHttpManager.swift in Sources */,
+				49F11A442629D8A3008DD650 /* LBCDetailViewController.swift in Sources */,
 				49EE93DD26298660002812A7 /* LBCManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49F11A1526282930008DD650 /* LBCAd.swift in Sources */,
+				49F11A482629D8A9008DD650 /* LBCDetailViewController.swift in Sources */,
 				49EE93A626280EFC002812A7 /* LeboncoinTestTests.swift in Sources */,
 				49F11A0E26282889008DD650 /* LBCAdListViewcontroller.swift in Sources */,
 				49F11A2626282B59008DD650 /* LBCAdTableViewCell.swift in Sources */,
@@ -297,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49F11A1626282930008DD650 /* LBCAd.swift in Sources */,
+				49F11A4C2629D8A9008DD650 /* LBCDetailViewController.swift in Sources */,
 				49EE93B126280EFC002812A7 /* LeboncoinTestUITests.swift in Sources */,
 				49F11A0F26282889008DD650 /* LBCAdListViewcontroller.swift in Sources */,
 				49F11A2726282B59008DD650 /* LBCAdTableViewCell.swift in Sources */,
@@ -452,6 +460,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4S53H48BX8;
 				INFOPLIST_FILE = LeboncoinTest/Info.plist;
@@ -461,6 +470,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = JCA.LeboncoinTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -471,6 +481,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4S53H48BX8;
 				INFOPLIST_FILE = LeboncoinTest/Info.plist;
@@ -480,6 +491,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = JCA.LeboncoinTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -492,7 +504,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LeboncoinTestTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -513,7 +525,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LeboncoinTestTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

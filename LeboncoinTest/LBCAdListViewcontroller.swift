@@ -110,4 +110,10 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
         return cell!
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = LBCDetailViewController.init()
+        detailVC.updateWithSmallAd(classified: self.smallAds[indexPath.row])
+        
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
