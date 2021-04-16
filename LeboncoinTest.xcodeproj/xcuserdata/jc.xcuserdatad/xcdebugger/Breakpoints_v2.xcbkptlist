@@ -3,4 +3,54 @@
    uuid = "DF621CF5-33AE-4CDA-9CA5-FCC1FBDA5D6F"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2F6C9752-B560-440E-8F9F-78843C5CC436"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LeboncoinTest/LBCManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "getAdsFromUrl(success:failure:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2F6C9752-B560-440E-8F9F-78843C5CC436 - c4cd16f64b81c9ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LeboncoinTest.LBCManager.getAdsFromUrl(success: (Swift.Array&lt;LeboncoinTest.SmallAd&gt;) -&gt; (), failure: (__C.NSError) -&gt; ()) -&gt; ()"
+                  moduleName = "LeboncoinTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jc/LeboncoinTestJCA/LeboncoinTest/LBCManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "246">
+               </Location>
+               <Location
+                  uuid = "2F6C9752-B560-440E-8F9F-78843C5CC436 - e0295d05ea42c3be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;LeboncoinTest.Categories&gt;) -&gt; () in LeboncoinTest.LBCManager.getAdsFromUrl(success: (Swift.Array&lt;LeboncoinTest.SmallAd&gt;) -&gt; (), failure: (__C.NSError) -&gt; ()) -&gt; ()"
+                  moduleName = "LeboncoinTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jc/LeboncoinTestJCA/LeboncoinTest/LBCManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

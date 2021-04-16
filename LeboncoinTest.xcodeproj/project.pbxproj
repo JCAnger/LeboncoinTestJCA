@@ -12,6 +12,7 @@
 		49EE939B26280EFC002812A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EE939926280EFC002812A7 /* LaunchScreen.storyboard */; };
 		49EE93A626280EFC002812A7 /* LeboncoinTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE93A526280EFC002812A7 /* LeboncoinTestTests.swift */; };
 		49EE93B126280EFC002812A7 /* LeboncoinTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE93B026280EFC002812A7 /* LeboncoinTestUITests.swift */; };
+		49EE93DD26298660002812A7 /* LBCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE93DC26298660002812A7 /* LBCManager.swift */; };
 		49F11A0D26282889008DD650 /* LBCAdListViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F11A0C26282889008DD650 /* LBCAdListViewcontroller.swift */; };
 		49F11A0E26282889008DD650 /* LBCAdListViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F11A0C26282889008DD650 /* LBCAdListViewcontroller.swift */; };
 		49F11A0F26282889008DD650 /* LBCAdListViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F11A0C26282889008DD650 /* LBCAdListViewcontroller.swift */; };
@@ -55,6 +56,7 @@
 		49EE93AC26280EFC002812A7 /* LeboncoinTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeboncoinTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49EE93B026280EFC002812A7 /* LeboncoinTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeboncoinTestUITests.swift; sourceTree = "<group>"; };
 		49EE93B226280EFC002812A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49EE93DC26298660002812A7 /* LBCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBCManager.swift; sourceTree = "<group>"; };
 		49F11A0C26282889008DD650 /* LBCAdListViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBCAdListViewcontroller.swift; sourceTree = "<group>"; };
 		49F11A1326282930008DD650 /* LBCAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBCAd.swift; sourceTree = "<group>"; };
 		49F11A1D26282AC9008DD650 /* LBCHttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBCHttpManager.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				49F11A1326282930008DD650 /* LBCAd.swift */,
 				49F11A0C26282889008DD650 /* LBCAdListViewcontroller.swift */,
 				49F11A2426282B59008DD650 /* LBCAdTableViewCell.swift */,
+				49EE93DC26298660002812A7 /* LBCManager.swift */,
 				49F11A1D26282AC9008DD650 /* LBCHttpManager.swift */,
 				49EE939726280EFC002812A7 /* Assets.xcassets */,
 				49EE939926280EFC002812A7 /* LaunchScreen.storyboard */,
@@ -273,6 +276,7 @@
 				49F11A0D26282889008DD650 /* LBCAdListViewcontroller.swift in Sources */,
 				49F11A2526282B59008DD650 /* LBCAdTableViewCell.swift in Sources */,
 				49F11A1E26282AC9008DD650 /* LBCHttpManager.swift in Sources */,
+				49EE93DD26298660002812A7 /* LBCManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

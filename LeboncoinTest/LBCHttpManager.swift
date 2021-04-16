@@ -13,7 +13,7 @@ class LBCHttpManager: NSObject {
     let lbcUrl = URL(string: "https://raw.githubusercontent.com/leboncoin/paperclip/master/listing.json")!
     let categoriesUrl = URL(string: "https://raw.githubusercontent.com/leboncoin/paperclip/master/categories.json")!
 
-    func getClassifedIdFromLbc(completion: @escaping (_ result: [[String: Any]]) -> Void) {
+    func getSmallAdsWithSuccess(success : @escaping (_ result: [[String: Any]]) -> Void, failure : @escaping (_ error : NSError) -> Void) {
         let task = session.dataTask(with: lbcUrl, completionHandler: { data, response, error in
 
             do {
@@ -21,11 +21,12 @@ class LBCHttpManager: NSObject {
                 if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [[String: Any]] {
                     // try to read out a string array
                     print(json[0])
-                    completion(json)
+                    success(json)
                     
                 }
             } catch let error as NSError {
                 print("Failed to load: \(error.localizedDescription)")
+                failure(error)
             }
             
             })
