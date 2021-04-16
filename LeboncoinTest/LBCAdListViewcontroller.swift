@@ -141,12 +141,10 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-       let cell = tableView.dequeueReusableCell(withIdentifier: "LBCAdTableViewCell", for: indexPath) as? LBCAdTableViewCell ?? LBCAdTableViewCell.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: "LBCAdTableViewCell")
-        cell.initWithClassified(theSmallAd: self.SmallAds[indexPath.row])
-        
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LBCAdTableViewCell", for: indexPath) as? LBCAdTableViewCell
+        cell?.updateWithClassified(theSmallAd: self.SmallAds[indexPath.row])
+            
+        return cell!
     }
-    
-    
 
 }

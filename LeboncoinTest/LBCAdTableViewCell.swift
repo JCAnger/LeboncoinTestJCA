@@ -40,7 +40,7 @@ class LBCAdTableViewCell: UITableViewCell {
         picture.clipsToBounds = true
         picture.backgroundColor = .lightGray
         picture.image = UIImage.init(named: "logoLbc")
-
+        picture.alpha = 0.5
         urgent.backgroundColor = .clear
         urgent.layer.cornerRadius = 10
         urgent.clipsToBounds = true
@@ -58,12 +58,6 @@ class LBCAdTableViewCell: UITableViewCell {
      required init?(coder aDecoder: NSCoder) {
        super.init(coder: aDecoder)
     }
-
-
-    override func prepareForReuse() {
-       
-        //
-    }
     
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -72,17 +66,8 @@ class LBCAdTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    
-    
-    func initWithClassified(theSmallAd : SmallAd) {
-//        if self.contentView.subviews.count == 0 {
-//            prepareForReuse()
-//        }
-        updateWithClassified(theSmallAd: theSmallAd)
-    }
 
     func updateWithClassified(theSmallAd : SmallAd) {
-        self.picture.image = UIImage.init(named: "logoLbc")
         
         getImageFromPath(path: theSmallAd.image.small)
         
@@ -141,6 +126,7 @@ class LBCAdTableViewCell: UITableViewCell {
     
     func getImageFromPath(path: String) {
         if path == "" {
+            picture.alpha = 0.5
             return
         }
         
@@ -151,7 +137,14 @@ class LBCAdTableViewCell: UITableViewCell {
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
                         self?.picture.image = image
+                        self?.picture.alpha = 1
                     }
+                }
+                
+            }
+            else {
+                DispatchQueue.main.async {
+                    self?.picture.alpha = 0.5
                 }
             }
         }
