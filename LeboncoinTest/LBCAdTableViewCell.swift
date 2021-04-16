@@ -26,14 +26,10 @@ class LBCAdTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
             super.init(style: style, reuseIdentifier: reuseIdentifier)
-        picture.frame = CGRect.init(x: self.topMarging, y: self.topMarging, width: self.size, height: self.size)
-        title.frame = CGRect.init(x: self.leftmarging, y: self.topMarging, width: self.width, height: 40)
+
         title.numberOfLines = 2;
-        category.frame = CGRect.init(x: self.leftmarging, y: self.topMarging + 45, width: self.width, height: self.height)
-        price.frame = CGRect.init(x: self.leftmarging, y: self.topMarging + 70, width: self.width, height: self.height)
-        price.textAlignment = .left
-        date.frame = CGRect.init(x: self.leftmarging, y: self.topMarging + 70, width: self.width, height: self.height)
-        date.textAlignment = .right
+        
+        urgent.frame = CGRect.init(x: self.topMarging/2, y: self.topMarging/2, width: space, height: space)
         
         title.font = UIFont.systemFont(ofSize: 16)
         category.font = UIFont.italicSystemFont(ofSize: 13)
@@ -45,6 +41,9 @@ class LBCAdTableViewCell: UITableViewCell {
         picture.backgroundColor = .lightGray
         picture.image = UIImage.init(named: "logoLbc")
 
+        urgent.backgroundColor = .clear
+        urgent.layer.cornerRadius = 10
+        urgent.clipsToBounds = true
         
         self.contentView.addSubview(title)
         self.contentView.addSubview(category)
@@ -110,6 +109,33 @@ class LBCAdTableViewCell: UITableViewCell {
         else {
             self.urgent.backgroundColor = .clear
         }
+        
+        picture.translatesAutoresizingMaskIntoConstraints = false
+        picture.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10 as CGFloat).isActive = true
+        picture.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10 as CGFloat).isActive = true
+        picture.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10 as CGFloat).isActive = true
+        picture.widthAnchor.constraint(equalTo: picture.heightAnchor, constant: 0).isActive = true
+        
+        title.translatesAutoresizingMaskIntoConstraints = false
+        title.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10 as CGFloat).isActive = true
+        title.leftAnchor.constraint(equalTo: picture.leftAnchor, constant: 100 as CGFloat).isActive = true
+        title.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10 as CGFloat).isActive = true
+        
+        category.translatesAutoresizingMaskIntoConstraints = false
+        category.topAnchor.constraint(equalTo: title.bottomAnchor, constant:  5 as CGFloat).isActive = true
+        category.leftAnchor.constraint(equalTo: picture.leftAnchor, constant: 100 as CGFloat).isActive = true
+        category.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10 as CGFloat).isActive = true
+
+        price.translatesAutoresizingMaskIntoConstraints = false
+        price.topAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -25 as CGFloat).isActive = true
+        price.leftAnchor.constraint(equalTo: picture.leftAnchor, constant: 100 as CGFloat).isActive = true
+        price.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10 as CGFloat).isActive = true
+
+        date.translatesAutoresizingMaskIntoConstraints = false
+        date.topAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -25 as CGFloat).isActive = true
+        date.leftAnchor.constraint(equalTo: picture.leftAnchor, constant: 100 as CGFloat).isActive = true
+        date.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10 as CGFloat).isActive = true
+        date.textAlignment = .right
         
     }
     
