@@ -40,7 +40,7 @@ class LBCAdTableViewCell: UITableViewCell {
         picture.clipsToBounds = true
         picture.backgroundColor = .lightGray
         picture.image = UIImage.init(named: "logoLbc")
-        picture.alpha = 0.5
+        picture.alpha = 0.3
         urgent.backgroundColor = .clear
         urgent.layer.cornerRadius = 10
         urgent.clipsToBounds = true
@@ -125,8 +125,10 @@ class LBCAdTableViewCell: UITableViewCell {
     }
     
     func getImageFromPath(path: String) {
+        picture.image = UIImage.init(named: "logoLbc")
+        picture.alpha = 0.3
         if path == "" {
-            picture.alpha = 0.5
+            
             return
         }
         
@@ -144,7 +146,7 @@ class LBCAdTableViewCell: UITableViewCell {
             }
             else {
                 DispatchQueue.main.async {
-                    self?.picture.alpha = 0.5
+                    self?.picture.alpha = 0.3
                 }
             }
         }
