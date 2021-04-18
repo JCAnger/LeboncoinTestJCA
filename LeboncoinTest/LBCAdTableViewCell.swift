@@ -67,10 +67,10 @@ class LBCAdTableViewCell: UITableViewCell {
     }
 
 
-    func updateWithClassified(theSmallAd : SmallAd) {
-        
-        getImageFromPath(path: theSmallAd.image.small)
-        
+    func updateWithClassified(theSmallAd : SSmallAd) {
+        if let imgPath = theSmallAd.images_url?.small {
+            getImageFromPath(path: imgPath)
+        }
         self.title.text = theSmallAd.title
         self.category.text = theSmallAd.cat
         
@@ -81,14 +81,17 @@ class LBCAdTableViewCell: UITableViewCell {
         self.price.text = formatter.string(from: theSmallAd.price as NSNumber)
         
         let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssXXX" // 2019-11-05T15:56:59+0000
+        let dateF = dateFormatter.date(from: theSmallAd.creation_date)!
+        
         dateFormatter.dateFormat = "dd/MM/yyyy"// yyyy-MM-dd'T'HH:mm:ss "
-        self.date.text = dateFormatter.string(from: theSmallAd.date)
+        self.date.text = dateFormatter.string(from: dateF)
         
         self.picture.layer.borderWidth = 1;
         self.picture.layer.borderColor = UIColor.lightGray.cgColor
         self.contentView.backgroundColor = .clear
         price.textColor = .orange
-        if theSmallAd.urgent {
+        if theSmallAd.is_urgent {
             self.urgent.backgroundColor = .orange
         }
         else {

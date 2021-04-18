@@ -11,8 +11,8 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
     
     var tableView : UITableView = UITableView()
     var results = [[String:Any]]()
-    var smallAds = [SmallAd]()
-    var allSmallAds = [SmallAd]()
+    var smallAds = [SSmallAd]()
+    var allSmallAds = [SSmallAd]()
     
     var selectedCat : Int = 0
     
@@ -70,7 +70,7 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
     
     func filterResponse() {
         let sorted = allSmallAds.sorted(by: {
-                $0.date.compare($1.date) == .orderedDescending
+                $0.creation_date.compare($1.creation_date) == .orderedDescending
             })
  
         smallAds = sorted;

@@ -13,20 +13,16 @@ class LBCHttpManager: NSObject {
     let lbcUrl = URL(string: "https://raw.githubusercontent.com/leboncoin/paperclip/master/listing.json")!
     let categoriesUrl = URL(string: "https://raw.githubusercontent.com/leboncoin/paperclip/master/categories.json")!
 
-    func getSmallAdsWithSuccess(success : @escaping (_ result: [[String: Any]]) -> Void, failure : @escaping (_ error : NSError) -> Void) {
+    func getSmallAdsWithSuccess(success : @escaping (_ result: [SSmallAd]) -> Void, failure : @escaping (_ error : NSError) -> Void) {
         let task = session.dataTask(with: lbcUrl, completionHandler: { data, response, error in
-
-            do {
-                // make sure this JSON is in the format we expect
-                if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [[String: Any]] {
-                    // try to read out a string array
-                    print(json[0])
-                    success(json)
-                    
-                }
-            } catch let error as NSError {
-                print("Failed to load: \(error.localizedDescription)")
-                failure(error)
+        
+            if let result = try? JSONDecoder().decode([SSmallAd].self, from: data!) {
+                print(result)
+                success(result)
+            }
+            if error != nil {
+                print("Failed to load: \(error!.localizedDescription)")
+                failure(error! as NSError)
             }
             
             })
@@ -34,21 +30,17 @@ class LBCHttpManager: NSObject {
     }
 
     
-    func getCategoriesWithSuccess(success : @escaping (_ result: [[String: Any]]) -> Void, failure : @escaping (_ error : NSError) -> Void) {
+    func getCategoriesWithSuccess(success : @escaping (_ result: [SCategories]) -> Void, failure : @escaping (_ error : NSError) -> Void) {
         let task = session.dataTask(with: categoriesUrl, completionHandler: { data, response, error in
-
-            do {
-                // make sure this JSON is in the format we expect
-                if let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [[String: Any]] {
-                    // try to read out a string array
-                    print(json)
-                    success(json)
-                    
-                }
-            } catch let error as NSError {
-                print("Failed to load: \(error.localizedDescription)")
-                failure(error)
+            if let result = try? JSONDecoder().decode([SCategories].self, from: data!) {
+                success(result)
             }
+            
+            if error != nil {
+                print("Failed to load: \(error!.localizedDescription)")
+                failure(error! as NSError)
+            }
+            //
             
             })
         task.resume()
