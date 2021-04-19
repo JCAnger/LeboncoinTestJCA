@@ -78,7 +78,7 @@ class LBCDetailViewController: UIViewController {
     }
     
     func updateWithSmallAd(classified theSmallAd : SSmallAd) {
-        if let imgPath = theSmallAd.images_url?.thumb {
+        if let imgPath = theSmallAd.imagesUrl?.thumb {
             getImageFromPath(path: imgPath)
         }
         
@@ -93,10 +93,10 @@ class LBCDetailViewController: UIViewController {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssXXX" // 2019-11-05T15:56:59+0000
-        let dateF = dateFormatter.date(from: theSmallAd.creation_date)!
+        //let dateF = dateFormatter.date(from: theSmallAd.creationDate)!
         
         dateFormatter.dateFormat = "dd/MM/yyyy"// yyyy-MM-dd'T'HH:mm:ss "
-        self.date.text = dateFormatter.string(from: dateF)
+        self.date.text = dateFormatter.string(from: theSmallAd.creationDate)
         
         self.picture.layer.borderWidth = 0.5
         self.view.backgroundColor = .white
@@ -104,7 +104,7 @@ class LBCDetailViewController: UIViewController {
         
         theDescription.text = theSmallAd.description
         
-        if theSmallAd.is_urgent {
+        if theSmallAd.isUrgent {
             self.isUrgent.backgroundColor = .orange
         }
         else {

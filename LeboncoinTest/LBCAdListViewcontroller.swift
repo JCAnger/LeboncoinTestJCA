@@ -41,7 +41,6 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
         self.navigationController?.navigationBar.barTintColor = .orange
         self.navigationController?.navigationBar.tintColor = .darkGray
         
-        //self.navigationItem.rightBarButtonItem =  UIBarButtonItem.init(title: "Filter", style: .plain, target: self, action: #selector(showCategoryList))
         
         self.getDataFromUrl()
         
@@ -70,7 +69,7 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
     
     func filterResponse() {
         let sorted = allSmallAds.sorted(by: {
-                $0.creation_date.compare($1.creation_date) == .orderedDescending
+                $0.creationDate.compare($1.creationDate) == .orderedDescending
             })
  
         smallAds = sorted;

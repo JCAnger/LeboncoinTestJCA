@@ -9,16 +9,40 @@ import Foundation
 
 struct SSmallAd : Decodable {
     var id: Int
-    var category_id: Int
+    var categoryId: Int
     var cat: String?
     var title: String
     var description: String
-    var images_url: SImageUrl?
+    var imagesUrl: SImageUrl?
     var price: Double
-    var creation_date: String
-    var is_urgent: Bool
+    var creationDate: Date
+    var isUrgent: Bool
     var siret: String?
+    
+    enum CodingKeys : String, CodingKey {
+        case id
+        case categoryId = "category_id"
+        case cat
+        case title
+        case description
+        case imagesUrl = "images_url"
+        case price
+        case creationDate = "creation_date"
+        case isUrgent = "is_urgent"
+        case siret
+            
+    }
 }
+
+
+extension DateFormatter {
+  static let yyyyMMdd: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssXXX"
+    return formatter
+  }()
+}
+
 
     
 struct SImageUrl : Decodable {
@@ -27,6 +51,11 @@ struct SImageUrl : Decodable {
 }
     
 struct SCategories : Decodable {
-    var id: Int
-    var name: String
+    var num: Int
+    var categorie: String
+    
+    enum CodingKeys : String, CodingKey {
+                case num = "id"
+                case categorie = "name"
+            }
 }
