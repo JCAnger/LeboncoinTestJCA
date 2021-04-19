@@ -11,13 +11,12 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
     
     var tableView : UITableView = UITableView()
     var results = [[String:Any]]()
-    var SmallAds = [SmallAd]()
-    var allSmallAds = [SmallAd]()
-    var categories = [Categories]()
+    var smallAds = [SSmallAd]()
+    var allSmallAds = [SSmallAd]()
     
     var selectedCat : Int = 0
     
-    let manager = LBCHttpManager.init()
+    let manager = LBCManager.init()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,88 +41,51 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
         self.navigationController?.navigationBar.barTintColor = .orange
         self.navigationController?.navigationBar.tintColor = .darkGray
         
-        //self.navigationItem.rightBarButtonItem =  UIBarButtonItem.init(title: "Filter", style: .plain, target: self, action: #selector(showCategoryList))
         
-        self.getCategories()
+        self.getDataFromUrl()
         
     }
     
     func getDataFromUrl() {
-        manager.getClassifedIdFromLbc { (json) in
-            self.convertToSmallAdsArray(results: json)
+        manager.getAdsFromUrl (success: { (result) in
+            self.allSmallAds = result
             self.updateData()
-        }
-    }
-    
-    func getCategories() {
-
-        manager.getCategoriesWithSuccess(success: { (json : [[String : Any]]) in
-            print("success")
-            self.convertToCategoriesArray(results: json)
-            self.getDataFromUrl()
-        }) { (error : NSError) in
+        }) { (NSError) in
             print("error")
         }
     }
     
-    
-    func convertToSmallAdsArray(results: [[String:Any]]) {
-        SmallAds = []
-        if results.count > 0 {
-            for object: [String: Any] in results {
-                let classified = SmallAd.init(smallAd: object)
-                classified.cat = categories[classified.numCat - 1].category
-                allSmallAds.append(classified)
-            }
-            SmallAds = allSmallAds
-        }
-    }
-    
-    func convertToCategoriesArray(results: [[String:Any]]) {
-        categories = []
-        if results.count > 0 {
-            for object: [String: Any] in results {
-                let cat = Categories.init(cat:object)
-                categories.append(cat)
-            }
-    
-        }
-    }
-    
-    
 
     
     func updateData() {
-        filterResponseByCategoriesAndDate()
+        filterResponse()
         
         DispatchQueue.main.async {
+            self.title = "leboncoin"
             self.tableView.reloadData()
         }
     }
     
     
-    func filterResponseByCategoriesAndDate() {
+    func filterResponse() {
         let sorted = allSmallAds.sorted(by: {
-                $0.date.compare($1.date) == .orderedDescending
+                $0.creationDate.compare($1.creationDate) == .orderedDescending
             })
  
-        SmallAds = sorted;
-        DispatchQueue.main.async {
-            self.title = "leboncoin"
-        }
+        smallAds = sorted;
     }
     
 
-    func filterUrgentFirst() {
-        let sortedUrgent = SmallAds.filter {
-            $0.urgent == true
-        }
-        let sortedNotUrgent = SmallAds.filter {
-            $0.urgent == false
-        }
-        
-        SmallAds = sortedUrgent + sortedNotUrgent
-    }
+//    func filterUrgentFirst() {
+//        let sortedUrgent = smallAds.filter {
+//            $0.urgent == true
+//        }
+//        let sortedNotUrgent = smallAds.filter {
+//            $0.urgent == false
+//        }
+//
+//        smallAds = sortedUrgent + sortedNotUrgent
+//    }
     
     // MARK: UITableViewDelegate
 
@@ -132,7 +94,7 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.SmallAds.count
+        return self.smallAds.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -141,12 +103,16 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-       let cell = tableView.dequeueReusableCell(withIdentifier: "LBCAdTableViewCell", for: indexPath) as? LBCAdTableViewCell ?? LBCAdTableViewCell.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: "LBCAdTableViewCell")
-        cell.initWithClassified(theSmallAd: self.SmallAds[indexPath.row])
-        
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LBCAdTableViewCell", for: indexPath) as? LBCAdTableViewCell
+        cell?.updateWithClassified(theSmallAd: self.smallAds[indexPath.row])
+            
+        return cell!
     }
-    
-    
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = LBCDetailViewController.init()
+        detailVC.updateWithSmallAd(classified: self.smallAds[indexPath.row])
+        
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
 }

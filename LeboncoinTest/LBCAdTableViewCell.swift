@@ -40,7 +40,7 @@ class LBCAdTableViewCell: UITableViewCell {
         picture.clipsToBounds = true
         picture.backgroundColor = .lightGray
         picture.image = UIImage.init(named: "logoLbc")
-
+        picture.alpha = 0.3
         urgent.backgroundColor = .clear
         urgent.layer.cornerRadius = 10
         urgent.clipsToBounds = true
@@ -58,12 +58,6 @@ class LBCAdTableViewCell: UITableViewCell {
      required init?(coder aDecoder: NSCoder) {
        super.init(coder: aDecoder)
     }
-
-
-    override func prepareForReuse() {
-       
-        //
-    }
     
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -72,20 +66,11 @@ class LBCAdTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    
-    
-    func initWithClassified(theSmallAd : SmallAd) {
-//        if self.contentView.subviews.count == 0 {
-//            prepareForReuse()
-//        }
-        updateWithClassified(theSmallAd: theSmallAd)
-    }
 
-    func updateWithClassified(theSmallAd : SmallAd) {
-        self.picture.image = UIImage.init(named: "logoLbc")
-        
-        getImageFromPath(path: theSmallAd.image.small)
-        
+    func updateWithClassified(theSmallAd : SSmallAd) {
+        if let imgPath = theSmallAd.imagesUrl?.small {
+            getImageFromPath(path: imgPath)
+        }
         self.title.text = theSmallAd.title
         self.category.text = theSmallAd.cat
         
@@ -96,14 +81,17 @@ class LBCAdTableViewCell: UITableViewCell {
         self.price.text = formatter.string(from: theSmallAd.price as NSNumber)
         
         let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssXXX" // 2019-11-05T15:56:59+0000
+        //let dateF = dateFormatter.date(from: theSmallAd.creationDate)!
+        
         dateFormatter.dateFormat = "dd/MM/yyyy"// yyyy-MM-dd'T'HH:mm:ss "
-        self.date.text = dateFormatter.string(from: theSmallAd.date)
+        self.date.text = dateFormatter.string(from: theSmallAd.creationDate)
         
         self.picture.layer.borderWidth = 1;
         self.picture.layer.borderColor = UIColor.lightGray.cgColor
         self.contentView.backgroundColor = .clear
         price.textColor = .orange
-        if theSmallAd.urgent {
+        if theSmallAd.isUrgent {
             self.urgent.backgroundColor = .orange
         }
         else {
@@ -140,7 +128,10 @@ class LBCAdTableViewCell: UITableViewCell {
     }
     
     func getImageFromPath(path: String) {
+        picture.image = UIImage.init(named: "logoLbc")
+        picture.alpha = 0.3
         if path == "" {
+            
             return
         }
         
@@ -151,7 +142,14 @@ class LBCAdTableViewCell: UITableViewCell {
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
                         self?.picture.image = image
+                        self?.picture.alpha = 1
                     }
+                }
+                
+            }
+            else {
+                DispatchQueue.main.async {
+                    self?.picture.alpha = 0.3
                 }
             }
         }
