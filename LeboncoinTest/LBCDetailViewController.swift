@@ -120,10 +120,14 @@ class LBCDetailViewController: UIViewController {
         picture.topAnchor.constraint(equalTo: view.topAnchor, constant:  100).isActive = true // ok
         picture.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10 as CGFloat).isActive = true //ok
         heightPictV = picture.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4)// ok
-        heightPictH = picture.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.8)// ok
-        widthPictV = picture.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95) // TODO
-        widthPictH = picture.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4) // TODO
-        picture.heightAnchor.constraint(equalTo: picture.widthAnchor, multiplier: 1).isActive =  true
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            heightPictH = picture.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4)// ok
+        }
+        else {
+            heightPictH = picture.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.8)// ok
+        }
+        widthPictV = picture.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95) //
+        widthPictH = picture.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4) //
         
         contentView.translatesAutoresizingMaskIntoConstraints =  false
         topDescV = contentView.topAnchor.constraint(equalTo: picture.bottomAnchor, constant:  10) // TODO
@@ -175,7 +179,10 @@ class LBCDetailViewController: UIViewController {
     }
 
 
-    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+    
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
         if UIDevice.current.orientation.isLandscape {
             self.updateToLandscape()
            
@@ -183,6 +190,7 @@ class LBCDetailViewController: UIViewController {
         else { // portrait
             self.updateToPortait()
         }
+        
     }
     
     func updateToLandscape() {

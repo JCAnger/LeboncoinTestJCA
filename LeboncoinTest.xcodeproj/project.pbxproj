@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49C15CC8262EF6B9006121B7 /* LBCUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE9403262EB08B002812A7 /* LBCUtils.swift */; };
+		49C15CCF262EF6BA006121B7 /* LBCUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE9403262EB08B002812A7 /* LBCUtils.swift */; };
+		49C15CD3262EF6C5006121B7 /* LBCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE93DC26298660002812A7 /* LBCManager.swift */; };
+		49C15CD7262EF6C6006121B7 /* LBCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE93DC26298660002812A7 /* LBCManager.swift */; };
 		49EE938F26280EF6002812A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE938E26280EF6002812A7 /* AppDelegate.swift */; };
 		49EE939826280EFC002812A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49EE939726280EFC002812A7 /* Assets.xcassets */; };
 		49EE939B26280EFC002812A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EE939926280EFC002812A7 /* LaunchScreen.storyboard */; };
@@ -295,11 +299,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				49F11A1526282930008DD650 /* LBCAd.swift in Sources */,
+				49C15CC8262EF6B9006121B7 /* LBCUtils.swift in Sources */,
 				49F11A482629D8A9008DD650 /* LBCDetailViewController.swift in Sources */,
 				49EE93A626280EFC002812A7 /* LeboncoinTestTests.swift in Sources */,
 				49F11A0E26282889008DD650 /* LBCAdListViewcontroller.swift in Sources */,
 				49F11A2626282B59008DD650 /* LBCAdTableViewCell.swift in Sources */,
 				49F11A1F26282AC9008DD650 /* LBCHttpManager.swift in Sources */,
+				49C15CD3262EF6C5006121B7 /* LBCManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,11 +314,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				49F11A1626282930008DD650 /* LBCAd.swift in Sources */,
+				49C15CCF262EF6BA006121B7 /* LBCUtils.swift in Sources */,
 				49F11A4C2629D8A9008DD650 /* LBCDetailViewController.swift in Sources */,
 				49EE93B126280EFC002812A7 /* LeboncoinTestUITests.swift in Sources */,
 				49F11A0F26282889008DD650 /* LBCAdListViewcontroller.swift in Sources */,
 				49F11A2726282B59008DD650 /* LBCAdTableViewCell.swift in Sources */,
 				49F11A2026282AC9008DD650 /* LBCHttpManager.swift in Sources */,
+				49C15CD7262EF6C6006121B7 /* LBCManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -63,6 +63,7 @@ class LBCHttpManager: NSObject {
         return []
     }
     
+    
     func getCategoriesFromData(data :  Data) -> [SCategory] {
         if let result = try? JSONDecoder().decode([SCategory].self, from: data) {
             return result

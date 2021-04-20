@@ -29,13 +29,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window = UIWindow(frame: UIScreen.main.bounds)
             window?.rootViewController = splitViewController
             window?.makeKeyAndVisible()
-            
-            return true
+
+           return true
         }
         else {
             window = UIWindow(frame: UIScreen.main.bounds)
 
-            let homeViewController = LBCDetailViewController()
+            let homeViewController = LBCAdListViewcontroller()
             let navigationController = UINavigationController.init(rootViewController: homeViewController)
             
             window!.rootViewController = navigationController

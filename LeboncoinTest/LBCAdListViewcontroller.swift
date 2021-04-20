@@ -28,14 +28,6 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        self.initView()
-        
-        self.getSmallAdsFromAPI()
-    
-    }
-    
-    func initView() {
-        
         tableView = UITableView.init(frame: self.view.frame, style: .grouped)
         tableView.delegate = self
         tableView.dataSource =  self
@@ -56,7 +48,10 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
         self.navigationController?.navigationBar.barTintColor = .orange
         self.navigationController?.navigationBar.tintColor = .darkGray
         
+        self.getSmallAdsFromAPI()
+    
     }
+    
     
     
     
@@ -127,7 +122,7 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
         if UIDevice.current.userInterfaceIdiom == .pad {
             //
             self.delegate?.start(show: self.smallAds[indexPath.row])
-
+            
         }
         else {
             let detailVC = LBCDetailViewController.init()
