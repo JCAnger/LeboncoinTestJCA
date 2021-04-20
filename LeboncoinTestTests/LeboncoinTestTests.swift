@@ -9,6 +9,12 @@ import XCTest
 @testable import LeboncoinTest
 
 class LeboncoinTestTests: XCTestCase {
+    
+    var smallAds = [SSmallAd]()
+    var allSmallAds = [SSmallAd]()
+    var vc = LBCAdListViewcontroller()
+    
+    let json : [[String: Any]] = [["images_url": ["small": "https://ad-small.jpg", "thumb" : "https://ad-thumb.jpg"], "creation_date": "2019-11-05T15:56:59+0000", "price": 140.0, "id": 1461267313, "description": "Magnifique Statuette", "is_urgent": false, "title": "Statue homme noir assis", "category_id": 4], ["images_url": ["small": "https://ad-small.jpg", "thumb" : "https://ad-thumb.jpg"], "creation_date": "2019-11-06T15:56:59+0000", "price": 140.0, "id": 1461267313, "description": "Magnifique Statuette", "is_urgent": true, "title": "Statue homme noir assis", "category_id": 5]]
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

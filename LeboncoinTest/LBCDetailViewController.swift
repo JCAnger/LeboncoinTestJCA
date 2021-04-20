@@ -50,6 +50,7 @@ class LBCDetailViewController: UIViewController {
         picture.clipsToBounds = true
         picture.backgroundColor = .lightGray
         picture.image = UIImage.init(named: "logoLbc")
+        picture.alpha =  0.3
         
         theTitle.font = UIFont.boldSystemFont(ofSize: 20)
         category.font = UIFont.italicSystemFont(ofSize: 16)
@@ -79,7 +80,11 @@ class LBCDetailViewController: UIViewController {
     
     func updateWithSmallAd(classified theSmallAd : SSmallAd) {
         if let imgPath = theSmallAd.imagesUrl?.thumb {
-            getImageFromPath(path: imgPath)
+            DispatchQueue.main.async {
+                self.picture.image = LBCUtils.getImageFromPath(path: imgPath)
+                self.picture.alpha =  1
+            }
+            
         }
         
         self.theTitle.text = theSmallAd.title
@@ -92,9 +97,6 @@ class LBCDetailViewController: UIViewController {
         self.price.text = formatter.string(from: theSmallAd.price as NSNumber)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssXXX" // 2019-11-05T15:56:59+0000
-        //let dateF = dateFormatter.date(from: theSmallAd.creationDate)!
-        
         dateFormatter.dateFormat = "dd/MM/yyyy"// yyyy-MM-dd'T'HH:mm:ss "
         self.date.text = dateFormatter.string(from: theSmallAd.creationDate)
         
@@ -168,24 +170,6 @@ class LBCDetailViewController: UIViewController {
         }
         else { // portrait
             self.updateToPortait()
-        }
-    }
-
-    func getImageFromPath(path: String) {
-        self.picture.image = UIImage.init(named: "imageLbc")
-        if path == "" {
-            return
-        }
-        let url = URL(string: path)!
-        
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.picture.image = image
-                    }
-                }
-            }
         }
     }
 

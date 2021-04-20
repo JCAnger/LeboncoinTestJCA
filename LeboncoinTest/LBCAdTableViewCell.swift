@@ -9,13 +9,8 @@ import UIKit
 
 class LBCAdTableViewCell: UITableViewCell {
 
-    let leftmarging = 100
-    
     let topMarging = 5
     let space = 20
-    let height = 15
-    let width = 300
-    let size = 90
     
     var title = UILabel()
     var category = UILabel()
@@ -39,7 +34,7 @@ class LBCAdTableViewCell: UITableViewCell {
         picture.contentMode = .scaleAspectFill
         picture.clipsToBounds = true
         picture.backgroundColor = .lightGray
-        picture.image = UIImage.init(named: "logoLbc")
+        //picture.image = UIImage.init(named: "logoLbc")
         picture.alpha = 0.3
         urgent.backgroundColor = .clear
         urgent.layer.cornerRadius = 10
@@ -54,11 +49,10 @@ class LBCAdTableViewCell: UITableViewCell {
         
      }
     
-    
+   
      required init?(coder aDecoder: NSCoder) {
        super.init(coder: aDecoder)
     }
-    
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -69,7 +63,8 @@ class LBCAdTableViewCell: UITableViewCell {
 
     func updateWithClassified(theSmallAd : SSmallAd) {
         if let imgPath = theSmallAd.imagesUrl?.small {
-            getImageFromPath(path: imgPath)
+            self.picture.image = LBCUtils.getImageFromPath(path: imgPath)
+            picture.alpha = 1
         }
         self.title.text = theSmallAd.title
         self.category.text = theSmallAd.cat
@@ -81,9 +76,6 @@ class LBCAdTableViewCell: UITableViewCell {
         self.price.text = formatter.string(from: theSmallAd.price as NSNumber)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssXXX" // 2019-11-05T15:56:59+0000
-        //let dateF = dateFormatter.date(from: theSmallAd.creationDate)!
-        
         dateFormatter.dateFormat = "dd/MM/yyyy"// yyyy-MM-dd'T'HH:mm:ss "
         self.date.text = dateFormatter.string(from: theSmallAd.creationDate)
         
@@ -127,32 +119,6 @@ class LBCAdTableViewCell: UITableViewCell {
         
     }
     
-    func getImageFromPath(path: String) {
-        picture.image = UIImage.init(named: "logoLbc")
-        picture.alpha = 0.3
-        if path == "" {
-            
-            return
-        }
-        
-        let url = URL(string: path)!
-        
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.picture.image = image
-                        self?.picture.alpha = 1
-                    }
-                }
-                
-            }
-            else {
-                DispatchQueue.main.async {
-                    self?.picture.alpha = 0.3
-                }
-            }
-        }
-    }
+
 
 }
