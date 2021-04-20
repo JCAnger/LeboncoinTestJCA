@@ -113,7 +113,7 @@ class LBCDetailViewController: UIViewController {
             self.isUrgent.backgroundColor = .clear
         }
         
-        topPictH = picture.topAnchor.constraint(equalTo: view.topAnchor, constant:  45)
+        topPictH = picture.topAnchor.constraint(equalTo: view.topAnchor, constant:  50)
         topPictV = picture.topAnchor.constraint(equalTo: view.topAnchor, constant:  110)
         
         picture.translatesAutoresizingMaskIntoConstraints = false
@@ -123,6 +123,7 @@ class LBCDetailViewController: UIViewController {
         heightPictH = picture.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.8)// ok
         widthPictV = picture.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.95) // TODO
         widthPictH = picture.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4) // TODO
+        picture.heightAnchor.constraint(equalTo: picture.widthAnchor, multiplier: 1).isActive =  true
         
         contentView.translatesAutoresizingMaskIntoConstraints =  false
         topDescV = contentView.topAnchor.constraint(equalTo: picture.bottomAnchor, constant:  10) // TODO

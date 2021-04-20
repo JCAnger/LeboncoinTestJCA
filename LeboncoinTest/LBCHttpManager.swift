@@ -19,7 +19,8 @@ class LBCHttpManager: NSObject {
         let task = URLSession.shared.dataTask(with: lbcUrl, completionHandler: { data, response, error in
         
             if data != nil {
-                success (self.getAdsFromData(data: data!))
+                let result = self.getAdsFromData(data: data!)
+                success (result)
             }
             
             if error != nil {
@@ -36,14 +37,15 @@ class LBCHttpManager: NSObject {
         let task = URLSession.shared.dataTask(with: categoriesUrl, completionHandler: { data, response, error in
             
             if data != nil {
-                success (self.getCategoriesFromData(data: data!))
+                let result = self.getCategoriesFromData(data: data!)
+                success (result)
             }
             
             if error != nil {
                 print("Failed to load: \(error!.localizedDescription)")
                 failure(error! as NSError)
             }
-            //
+        
             
             })
         task.resume()

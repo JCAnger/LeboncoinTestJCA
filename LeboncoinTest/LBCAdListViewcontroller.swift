@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol MasterDelegate {
+    func start(show: SSmallAd)
+}
+
 class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var tableView : UITableView = UITableView()
@@ -17,10 +21,21 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
     var selectedCat : Int = 0
     
     let manager = LBCManager.init()
+    
+    var delegate : MasterDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        self.initView()
+        
+        self.getSmallAdsFromAPI()
+    
+    }
+    
+    func initView() {
+        
         tableView = UITableView.init(frame: self.view.frame, style: .grouped)
         tableView.delegate = self
         tableView.dataSource =  self
@@ -41,12 +56,11 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
         self.navigationController?.navigationBar.barTintColor = .orange
         self.navigationController?.navigationBar.tintColor = .darkGray
         
-        
-        self.getDataFromUrl()
-        
     }
     
-    func getDataFromUrl() {
+    
+    
+    func getSmallAdsFromAPI() {
         manager.getAdsFromUrl (success: { (result) in
             self.allSmallAds = result
             self.updateData()
@@ -110,9 +124,16 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailVC = LBCDetailViewController.init()
-        detailVC.updateWithSmallAd(classified: self.smallAds[indexPath.row])
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            //
+            self.delegate?.start(show: self.smallAds[indexPath.row])
+
+        }
+        else {
+            let detailVC = LBCDetailViewController.init()
+            detailVC.updateWithSmallAd(classified: self.smallAds[indexPath.row])
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }
         
-        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

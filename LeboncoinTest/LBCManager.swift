@@ -20,8 +20,15 @@ class LBCManager: NSObject {
             //
             self.categories = result
             self.httpManager.getSmallAdsWithSuccess(success: { (result) in
-                let ads = self.updateWithCategories(result: result)
-                success(ads)
+                if result.count > 0 {
+                    let ads = self.updateWithCategories(result: result)
+                    success(ads)
+                }
+                else {
+                    print("No categories founded")
+                    success(result)
+                }
+                    
             }) { (error : NSError) in
                 print("error")
                 failure(error)
@@ -36,7 +43,7 @@ class LBCManager: NSObject {
         httpManager.getCategoriesWithSuccess(success: { (result : [SCategory]) in
             success(result)
         }) { (error : NSError) in
-            print("error categorys") // TODO
+            print("error categories") // TODO
             failure(error)
         }
     }
