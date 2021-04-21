@@ -50,12 +50,12 @@ struct SImageUrl : Decodable {
     var thumb: String?
 }
     
-struct SCategories : Decodable {
+struct SCategory : Decodable {
     var num: Int
-    var categorie: String
+    var categoryName: String
     
     enum CodingKeys : String, CodingKey {
                 case num = "id"
-                case categorie = "name"
+                case categoryName = "name"
             }
 }

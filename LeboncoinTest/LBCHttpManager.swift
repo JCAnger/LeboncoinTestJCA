@@ -16,14 +16,11 @@ class LBCHttpManager: NSObject {
 
     
     func getSmallAdsWithSuccess(success : @escaping (_ result: [SSmallAd]) -> Void, failure : @escaping (_ error : NSError) -> Void) {
-        let task = session.dataTask(with: lbcUrl, completionHandler: { data, response, error in
+        let task = URLSession.shared.dataTask(with: lbcUrl, completionHandler: { data, response, error in
         
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .formatted(.yyyyMMdd)
-            
-            if let result = try? decoder.decode([SSmallAd].self, from: data!) {
-                print(result)
-                success(result)
+            if data != nil {
+                let result = self.getAdsFromData(data: data!)
+                success (result)
             }
             
             if error != nil {
@@ -36,21 +33,41 @@ class LBCHttpManager: NSObject {
     }
 
     
-    func getCategoriesWithSuccess(success : @escaping (_ result: [SCategories]) -> Void, failure : @escaping (_ error : NSError) -> Void) {
-        let task = session.dataTask(with: categoriesUrl, completionHandler: { data, response, error in
-            if let result = try? JSONDecoder().decode([SCategories].self, from: data!) {
-                success(result)
+    func getCategoriesWithSuccess(success : @escaping (_ result: [SCategory]) -> Void, failure : @escaping (_ error : NSError) -> Void) {
+        let task = URLSession.shared.dataTask(with: categoriesUrl, completionHandler: { data, response, error in
+            
+            if data != nil {
+                let result = self.getCategoriesFromData(data: data!)
+                success (result)
             }
             
             if error != nil {
                 print("Failed to load: \(error!.localizedDescription)")
                 failure(error! as NSError)
             }
-            //
+        
             
             })
         task.resume()
         
        //
+    }
+    
+    
+    func getAdsFromData(data :  Data) -> [SSmallAd] {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(.yyyyMMdd)
+        if let result = try? decoder.decode([SSmallAd].self, from: data) {
+            return result
+        }
+        return []
+    }
+    
+    
+    func getCategoriesFromData(data :  Data) -> [SCategory] {
+        if let result = try? JSONDecoder().decode([SCategory].self, from: data) {
+            return result
+        }
+        return []
     }
 }

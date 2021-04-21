@@ -10,18 +10,25 @@ import UIKit
 
 class LBCManager: NSObject {
     
-    var categories = [SCategories]()
+    var categories = [SCategory]()
     
     let httpManager = LBCHttpManager.init()
     
     func getAdsFromUrl(success : @escaping (_ result: [SSmallAd]) -> Void, failure : @escaping (_ error : NSError) -> Void) {
         
-        self.getCategoriesFromUrl { (result: [SCategories]) in
+        self.getCategoriesFromUrl { (result: [SCategory]) in
             //
             self.categories = result
             self.httpManager.getSmallAdsWithSuccess(success: { (result) in
-                let ads = self.updateWithCategories(result: result)
-                success(ads)
+                if result.count > 0 {
+                    let ads = self.updateWithCategories(result: result)
+                    success(ads)
+                }
+                else {
+                    print("No categories founded")
+                    success(result)
+                }
+                    
             }) { (error : NSError) in
                 print("error")
                 failure(error)
@@ -32,8 +39,8 @@ class LBCManager: NSObject {
     }
     
     
-    func getCategoriesFromUrl(success : @escaping (_ result: [SCategories]) -> Void, failure : @escaping (_ error : NSError) -> Void) {
-        httpManager.getCategoriesWithSuccess(success: { (result : [SCategories]) in
+    func getCategoriesFromUrl(success : @escaping (_ result: [SCategory]) -> Void, failure : @escaping (_ error : NSError) -> Void) {
+        httpManager.getCategoriesWithSuccess(success: { (result : [SCategory]) in
             success(result)
         }) { (error : NSError) in
             print("error categories") // TODO
@@ -41,12 +48,14 @@ class LBCManager: NSObject {
         }
     }
     
-    func updateWithCategories(result : [SSmallAd]) -> [SSmallAd]{
+    func updateWithCategories(result : [SSmallAd]) -> [SSmallAd]{ // ???
+        var newResult = [SSmallAd]()
         for var newAd: SSmallAd in result {
-            newAd.cat = categories[newAd.categoryId - 1].categorie
+            newAd.cat = categories[newAd.categoryId - 1].categoryName as String
+            newResult.append(newAd)
         }
         
-        return result
+        return newResult
     }
    
 }
