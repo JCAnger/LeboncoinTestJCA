@@ -34,7 +34,6 @@ class LBCAdTableViewCell: UITableViewCell {
         picture.contentMode = .scaleAspectFill
         picture.clipsToBounds = true
         picture.backgroundColor = .lightGray
-        //picture.image = UIImage.init(named: "logoLbc")
         picture.alpha = 0.3
         urgent.backgroundColor = .clear
         urgent.layer.cornerRadius = 10
@@ -61,7 +60,7 @@ class LBCAdTableViewCell: UITableViewCell {
     }
 
 
-    func updateWithClassified(theSmallAd : SSmallAd) {
+    func updateCellWithAd(theSmallAd : SSmallAd) {
         if let imgPath = theSmallAd.imagesUrl?.small {
             self.picture.image = LBCUtils.getImageFromPath(path: imgPath)
             picture.alpha = 1

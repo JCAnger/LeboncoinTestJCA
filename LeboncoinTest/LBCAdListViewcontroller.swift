@@ -53,8 +53,6 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
     }
     
     
-    
-    
     func getSmallAdsFromAPI() {
         manager.getAdsFromUrl (success: { (result) in
             self.allSmallAds = result
@@ -113,7 +111,7 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "LBCAdTableViewCell", for: indexPath) as? LBCAdTableViewCell
-        cell?.updateWithClassified(theSmallAd: self.smallAds[indexPath.row])
+        cell?.updateCellWithAd(theSmallAd: self.smallAds[indexPath.row])
             
         return cell!
     }
