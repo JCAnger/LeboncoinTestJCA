@@ -21,7 +21,7 @@ class LBCDetailViewController: UIViewController {
     var topPictV = NSLayoutConstraint()
     var topPictH = NSLayoutConstraint()
     
-    var widthPictV = NSLayoutConstraint()
+    var rightPictV = NSLayoutConstraint()
     var widthPictH = NSLayoutConstraint()
     var heightPictV = NSLayoutConstraint()
     var heightPictH = NSLayoutConstraint()
@@ -46,10 +46,10 @@ class LBCDetailViewController: UIViewController {
         theDescription.numberOfLines = 15
         theDescription.textAlignment = .justified
         
-        picture.contentMode = .scaleAspectFill
+        
         picture.clipsToBounds = true
         picture.backgroundColor = .lightGray
-        picture.image = UIImage.init(named: "logoLbc")
+        picture.contentMode = .scaleAspectFill
         picture.alpha =  0.3
         
         theTitle.font = UIFont.boldSystemFont(ofSize: 20)
@@ -77,9 +77,12 @@ class LBCDetailViewController: UIViewController {
         self.contentView.addSubview(date)
         self.contentView.addSubview(isUrgent)
         
+        
+        
     }
     
     func updateWithSmallAd(classified theSmallAd : SSmallAd) {
+        
         if let imgPath = theSmallAd.imagesUrl?.thumb {
             DispatchQueue.main.async {
                 self.picture.image = LBCUtils.getImageFromPath(path: imgPath)
@@ -126,14 +129,16 @@ class LBCDetailViewController: UIViewController {
         else {
             heightPictH = picture.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.8)// ok
         }
-        widthPictH = picture.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4) // ***
+        rightPictV = picture.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10) // *** ???
+        rightPictV.isActive = true
+        widthPictH = picture.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4)
         
         contentView.translatesAutoresizingMaskIntoConstraints =  false
         topDescV = contentView.topAnchor.constraint(equalTo: picture.bottomAnchor, constant:  10) // TODO
         topDescH = contentView.topAnchor.constraint(equalTo: view.topAnchor, constant:  50) // TODO
         leftDescV = contentView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10 as CGFloat) // TODO
         leftDescH = contentView.leftAnchor.constraint(equalTo: picture.rightAnchor, constant: 10 as CGFloat) // TODO
-        contentView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true // ok
+        contentView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true // ok
         
         theTitle.translatesAutoresizingMaskIntoConstraints = false
         theTitle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10 as CGFloat).isActive = true
@@ -192,6 +197,7 @@ class LBCDetailViewController: UIViewController {
     func updateToLandscape() {
         topPictV.isActive = false
         topPictH.isActive = true
+        rightPictV.isActive = false
         widthPictH.isActive = true
         heightPictV.isActive = false
         heightPictH.isActive = true
@@ -205,12 +211,14 @@ class LBCDetailViewController: UIViewController {
         topPictH.isActive = false
         topPictV.isActive = true
         widthPictH.isActive = false
+        
         heightPictH.isActive = false
         heightPictV.isActive = true
         topDescH.isActive = false
         topDescV.isActive = true
         leftDescH.isActive = false
         leftDescV.isActive = true
+        rightPictV.isActive = true
         
     }
 }
