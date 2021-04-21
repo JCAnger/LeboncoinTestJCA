@@ -130,6 +130,7 @@ class LBCDetailViewController: UIViewController {
             heightPictH = picture.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.8)// ok
         }
         rightPictV = picture.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10) // *** ???
+        rightPictV.isActive = true
         widthPictH = picture.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.4)
         
         contentView.translatesAutoresizingMaskIntoConstraints =  false
@@ -210,13 +211,14 @@ class LBCDetailViewController: UIViewController {
         topPictH.isActive = false
         topPictV.isActive = true
         widthPictH.isActive = false
-        //rightPictV.isActive = true
+        
         heightPictH.isActive = false
         heightPictV.isActive = true
         topDescH.isActive = false
         topDescV.isActive = true
         leftDescH.isActive = false
         leftDescV.isActive = true
+        rightPictV.isActive = true
         
     }
 }
