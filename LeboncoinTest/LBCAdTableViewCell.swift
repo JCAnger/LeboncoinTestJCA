@@ -62,8 +62,10 @@ class LBCAdTableViewCell: UITableViewCell {
 
     func updateCellWithAd(theSmallAd : SSmallAd) {
         if let imgPath = theSmallAd.imagesUrl?.small {
-            self.picture.image = LBCUtils.getImageFromPath(path: imgPath)
-            picture.alpha = 1
+            DispatchQueue.main.async {
+                self.picture.image = LBCUtils.getImageFromPath(path: imgPath)
+                self.picture.alpha = 1
+            }
         }
         self.title.text = theSmallAd.title
         self.category.text = theSmallAd.cat

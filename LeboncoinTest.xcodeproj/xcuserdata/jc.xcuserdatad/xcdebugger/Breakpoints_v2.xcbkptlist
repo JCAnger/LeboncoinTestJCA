@@ -18,38 +18,6 @@
             endingLineNumber = "171"
             landmarkName = "updateWithSmallAd(classified:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "0A68EDDA-0E7B-4CED-A3D4-CD2ECBC180BF - bb3e6334228ef28b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "LeboncoinTest.LBCDetailViewController.updateWithSmallAd(classified: LeboncoinTest.SSmallAd) -&gt; ()"
-                  moduleName = "LeboncoinTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jc/LeboncoinTestJCA/LeboncoinTest/LBCDetailViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "171"
-                  endingLineNumber = "171"
-                  offsetFromSymbolStart = "16639">
-               </Location>
-               <Location
-                  uuid = "0A68EDDA-0E7B-4CED-A3D4-CD2ECBC180BF - e9a41be40914344"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "LeboncoinTestTests.LBCDetailViewController.updateWithSmallAd(classified: LeboncoinTestTests.SSmallAd) -&gt; ()"
-                  moduleName = "LeboncoinTestTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jc/LeboncoinTestJCA/LeboncoinTest/LBCDetailViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "171"
-                  endingLineNumber = "171"
-                  offsetFromSymbolStart = "16639">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -194,38 +162,6 @@
             endingLineNumber = "184"
             landmarkName = "viewWillTransition(to:with:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "82D1DACE-85AD-4CFB-B5FC-4526CC8BFD97 - 78beb0625d43f1a3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "LeboncoinTest.LBCDetailViewController.viewWillTransition(to: __C.CGSize, with: __C.UIViewControllerTransitionCoordinator) -&gt; ()"
-                  moduleName = "LeboncoinTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jc/LeboncoinTestJCA/LeboncoinTest/LBCDetailViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "184"
-                  endingLineNumber = "184"
-                  offsetFromSymbolStart = "351">
-               </Location>
-               <Location
-                  uuid = "82D1DACE-85AD-4CFB-B5FC-4526CC8BFD97 - cdeb698fded91183"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "LeboncoinTestTests.LBCDetailViewController.viewWillTransition(to: __C.CGSize, with: __C.UIViewControllerTransitionCoordinator) -&gt; ()"
-                  moduleName = "LeboncoinTestTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jc/LeboncoinTestJCA/LeboncoinTest/LBCDetailViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "184"
-                  endingLineNumber = "184"
-                  offsetFromSymbolStart = "351">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -242,38 +178,6 @@
             endingLineNumber = "188"
             landmarkName = "viewWillTransition(to:with:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "777056A2-222D-4B16-8D38-5754DB6ED668 - 78beb0625d43f02f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "LeboncoinTest.LBCDetailViewController.viewWillTransition(to: __C.CGSize, with: __C.UIViewControllerTransitionCoordinator) -&gt; ()"
-                  moduleName = "LeboncoinTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jc/LeboncoinTestJCA/LeboncoinTest/LBCDetailViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "188"
-                  endingLineNumber = "188"
-                  offsetFromSymbolStart = "379">
-               </Location>
-               <Location
-                  uuid = "777056A2-222D-4B16-8D38-5754DB6ED668 - cdeb698fded9100f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "LeboncoinTestTests.LBCDetailViewController.viewWillTransition(to: __C.CGSize, with: __C.UIViewControllerTransitionCoordinator) -&gt; ()"
-                  moduleName = "LeboncoinTestTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jc/LeboncoinTestJCA/LeboncoinTest/LBCDetailViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "188"
-                  endingLineNumber = "188"
-                  offsetFromSymbolStart = "379">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -290,38 +194,6 @@
             endingLineNumber = "174"
             landmarkName = "updateWithSmallAd(classified:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "BBFE0AC6-2D84-40E3-8F55-4C8E7BA5809A - bb3e6334228ef2e8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "LeboncoinTest.LBCDetailViewController.updateWithSmallAd(classified: LeboncoinTest.SSmallAd) -&gt; ()"
-                  moduleName = "LeboncoinTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jc/LeboncoinTestJCA/LeboncoinTest/LBCDetailViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "174"
-                  endingLineNumber = "174"
-                  offsetFromSymbolStart = "16670">
-               </Location>
-               <Location
-                  uuid = "BBFE0AC6-2D84-40E3-8F55-4C8E7BA5809A - e9a41be40914327"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "LeboncoinTestTests.LBCDetailViewController.updateWithSmallAd(classified: LeboncoinTestTests.SSmallAd) -&gt; ()"
-                  moduleName = "LeboncoinTestTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jc/LeboncoinTestJCA/LeboncoinTest/LBCDetailViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "174"
-                  endingLineNumber = "174"
-                  offsetFromSymbolStart = "16670">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -418,102 +290,6 @@
             endingLineNumber = "167"
             landmarkName = "testUpdateCellWithAdCat()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D9333D51-9A05-4380-9783-12635BBF0927"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LeboncoinTest/LBCAdTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "updateCellWithAd(theSmallAd:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D9333D51-9A05-4380-9783-12635BBF0927 - 73585fa55e0675f2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "LeboncoinTest.LBCAdTableViewCell.updateCellWithAd(theSmallAd: LeboncoinTest.SSmallAd) -&gt; ()"
-                  moduleName = "LeboncoinTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jc/LeboncoinTestJCA/LeboncoinTest/LBCAdTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "528">
-               </Location>
-               <Location
-                  uuid = "D9333D51-9A05-4380-9783-12635BBF0927 - 8c14da86473aa351"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "LeboncoinTestTests.LBCAdTableViewCell.updateCellWithAd(theSmallAd: LeboncoinTestTests.SSmallAd) -&gt; ()"
-                  moduleName = "LeboncoinTestTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jc/LeboncoinTestJCA/LeboncoinTest/LBCAdTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "528">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E8881C89-4FC2-4224-9D82-AC19F4C39BE6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LeboncoinTest/LBCAdTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "updateCellWithAd(theSmallAd:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E8881C89-4FC2-4224-9D82-AC19F4C39BE6 - 73585fa55e0675ad"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "LeboncoinTest.LBCAdTableViewCell.updateCellWithAd(theSmallAd: LeboncoinTest.SSmallAd) -&gt; ()"
-                  moduleName = "LeboncoinTest"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jc/LeboncoinTestJCA/LeboncoinTest/LBCAdTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "679">
-               </Location>
-               <Location
-                  uuid = "E8881C89-4FC2-4224-9D82-AC19F4C39BE6 - 8c14da86473aa30e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "LeboncoinTestTests.LBCAdTableViewCell.updateCellWithAd(theSmallAd: LeboncoinTestTests.SSmallAd) -&gt; ()"
-                  moduleName = "LeboncoinTestTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jc/LeboncoinTestJCA/LeboncoinTest/LBCAdTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "679">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

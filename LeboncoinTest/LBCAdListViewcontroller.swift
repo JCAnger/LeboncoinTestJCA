@@ -28,7 +28,7 @@ class LBCAdListViewcontroller: UIViewController, UITableViewDataSource, UITableV
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        tableView = UITableView.init(frame: self.view.frame, style: .grouped)
+        tableView = UITableView.init(frame: self.view.frame, style: .plain)
         tableView.delegate = self
         tableView.dataSource =  self
         tableView.contentSize = tableView.frame.size
